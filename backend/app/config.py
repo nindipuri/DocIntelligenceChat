@@ -10,7 +10,7 @@ class Settings(BaseSettings):
 
     openai_api_key: str = ""
     model_name: str = "gpt-4o-mini"
-    max_context_pages: int = 5
+    max_context_pages: int = 10
 
     # Storage paths (relative to project root or absolute)
     storage_documents: Path = Path("storage/documents")

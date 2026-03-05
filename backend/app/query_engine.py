@@ -50,7 +50,10 @@ def answer(
 
     prompt = f"""You are an assistant answering questions about a document.
 
-Use only the context below. If the answer is not present in the context, say "I cannot find the answer in the document."
+Use only the context below to answer. Extract and synthesize information from the provided pages.
+- If the answer is in the context (even if phrased differently), provide it clearly and cite the relevant page(s).
+- If the context has partial or related information, provide what you can find.
+- Only say "I cannot find the answer in the document" if the context clearly does not contain any relevant information.
 
 Context:
 {context}

@@ -1,6 +1,8 @@
 """Parse uploaded documents into pages or logical sections."""
 
 import logging
+import re
+import unicodedata
 from pathlib import Path
 from typing import Any
 
@@ -8,27 +10,50 @@ from pypdf import PdfReader
 
 logger = logging.getLogger(__name__)
 
+
+def _normalize_text(text: str) -> str:
+    """Normalize unicode spaces and control chars so keyword matching works reliably."""
+    if not text:
+        return ""
+    text = unicodedata.normalize("NFKC", text)
+    text = re.sub(r"[\xa0\u200b\u200c\u200d\ufeff]+", " ", text)
+    return " ".join(text.split())
+
 # Chunk size for TXT splitting (characters)
 TXT_CHUNK_MIN = 800
 TXT_CHUNK_MAX = 1200
 
 
 def _pages_to_dict_list(pages: list[dict[str, Any]]) -> list[dict[str, Any]]:
-    """Ensure each item has 'page' and 'text' keys."""
-    return [{"page": p["page"], "text": p.get("text", "").strip()} for p in pages]
+    """Ensure each item has 'page' and 'text' keys. Normalize text for retrieval."""
+    return [
+        {"page": p["page"], "text": _normalize_text(p.get("text", ""))}
+        for p in pages
+    ]
 
 
 def load_pdf(file_path: Path) -> list[dict[str, Any]]:
     """
     Parse a PDF file into one entry per page.
+    Uses PyMuPDF if available (better for tables/complex layouts), else pypdf.
     Returns list of {"page": 1-based index, "text": "..."}.
     """
     pages: list[dict[str, Any]] = []
-    reader = PdfReader(str(file_path))
-    for i, page in enumerate(reader.pages, start=1):
-        text = page.extract_text() or ""
-        pages.append({"page": i, "text": text.strip()})
-    logger.info("Parsed PDF %s: %d pages", file_path.name, len(pages))
+    try:
+        import fitz  # PyMuPDF
+        doc = fitz.open(str(file_path))
+        for i in range(len(doc)):
+            page = doc[i]
+            text = page.get_text("text") or ""
+            pages.append({"page": i + 1, "text": text.strip()})
+        doc.close()
+        logger.info("Parsed PDF %s with PyMuPDF: %d pages", file_path.name, len(pages))
+    except ImportError:
+        reader = PdfReader(str(file_path))
+        for i, page in enumerate(reader.pages, start=1):
+            text = page.extract_text() or ""
+            pages.append({"page": i, "text": text.strip()})
+        logger.info("Parsed PDF %s with pypdf: %d pages", file_path.name, len(pages))
     return _pages_to_dict_list(pages)
 
 
