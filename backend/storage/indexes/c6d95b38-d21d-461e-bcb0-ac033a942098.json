@@ -1,0 +1,57 @@
+{
+"filename": "DrawPost_Agency_AI_Platform_PRD_Updated.docx",
+"pages": [
+{
+"page": 1,
+"text": "DrawPost Agency AI Platform"
+},
+{
+"page": 2,
+"text": "Product Requirement Document (PRD) – Updated Version"
+},
+{
+"page": 3,
+"text": "1. Product Overview\n\nDrawPost Agency AI Platform is a SaaS system designed to help digital marketing agencies automate social media marketing for multiple clients.\n\nThe system enables agencies to:\n• Plan content\n• Generate posts\n• Schedule publishing\n• Publish automatically\n• Track performance\n• Generate reports\n• Analyze competitors\n\nCore Objective:\nEnable agencies to operate marketing on autopilot with strategic intelligence."
+},
+{
+"page": 4,
+"text": "2. Target Users\n\nPrimary Users:\nDigital marketing agencies managing 5–100 SMB clients.\n\nSecondary Users:\nFreelance marketers managing multiple brands."
+},
+{
+"page": 5,
+"text": "3. Core Problem\n\nAgencies spend significant manual effort on:\n• Deciding daily content\n• Creating repetitive posts\n• Scheduling posts\n• Publishing manually\n• Preparing monthly reports\n• Tracking competitors manually\n\nThis leads to:\n• High manpower dependency\n• Low scalability\n• Inconsistent strategy"
+},
+{
+"page": 6,
+"text": "4. Product Vision\n\nAdd Client → Enable Autopilot → Marketing Runs Automatically.\n\nWith Competitive Intelligence:\nAdd Competitors → Gain Strategic Insights → Improve Positioning."
+},
+{
+"page": 7,
+"text": "5. Product Modules\n\n5.1 Agency Workspace\nDashboard shows:\n• Total clients\n• Clients on autopilot\n• Scheduled posts\n• Published posts\n• Engagement trends\n• Competitor comparison snapshot\n\n5.2 Client Workspace\nEach client includes:\n• Brand profile\n• Connected social accounts\n• Content calendar\n• Performance metrics\n• Competitor list\n\n5.3 AI Content Planner\nGenerates monthly calendar based on:\n• Industry\n• Geography\n• Brand tone\n• Competitor insights (if available)\n\nIncludes:\n• Post date\n• Post type\n• Topic\n• Hook\n• CTA\n\n5.4 AI Post Generator\nFor each planned topic:\n• Caption\n• Hashtags\n• CTA\n• Visual asset using templates\n\n5.5 Smart Scheduling\nDetermines optimal posting time based on platform best practices.\n\n5.6 Automated Publishing\nAutomatically publishes scheduled posts to Instagram & Facebook.\nNotifies agency on failure.\n\n5.7 Performance Dashboard\nDisplays:\n• Engagement trends\n• Post performance\n• Growth indicators\n• Top-performing posts\n\n5.8 Automated Reporting\nGenerates monthly PDF reports including:\n• Total posts\n• Engagement summary\n• Growth comparison\n• Best performing post\n• Competitor comparison insights"
+},
+{
+"page": 8,
+"text": "6. Competitive Intelligence Module\n\nPurpose:\nProvide agencies with automated competitor monitoring and insights.\n\nCapabilities:\n\n6.1 Competitor Setup\nAgencies can add competitor social handles per client.\n\n6.2 Competitor Monitoring\nSystem tracks:\n• Posting frequency\n• Engagement levels\n• Content type patterns\n\n6.3 AI Insight Engine\nAI analyzes competitor trends and generates:\n• Content theme analysis\n• Engagement comparison\n• Strategic gaps\n• Suggested positioning strategy\n\n6.4 Dashboard Comparison\nDisplays:\n• Client vs Competitor engagement comparison\n• Posting frequency comparison\n• Content type distribution comparison\n\n6.5 Reporting Integration\nMonthly reports include competitor performance summary and strategic insights."
+},
+{
+"page": 9,
+"text": "7. Autopilot Mode\n\nWhen enabled:\n• Monthly content generated automatically\n• Posts generated daily\n• Posts scheduled automatically\n• Posts published automatically\n• Reports generated automatically\n• Competitor insights considered in planning\n\nWhen disabled:\n• Content requires manual approval before publishing."
+},
+{
+"page": 10,
+"text": "8. User Roles"
+},
+{
+"page": 11,
+"text": "Owner – Full access\nManager – Manage clients & view reports\nViewer – Read-only access"
+},
+{
+"page": 12,
+"text": "9. MVP Scope\n\nIncluded:\n• Instagram & Facebook\n• AI content planning\n• AI caption generation\n• Scheduling\n• Automated publishing\n• Monthly reports\n• Basic competitor monitoring\n\nExcluded:\n• Paid ads automation\n• WhatsApp automation\n• AI image generation\n• Multi-language support\n• Advanced predictive analytics"
+},
+{
+"page": 13,
+"text": "10. Success Criteria\n\nThe platform succeeds when:\n• Agencies manage 10+ clients autonomously\n• Daily posting runs without manual effort\n• Reports are auto-generated\n• Competitor insights improve strategic positioning"
+}
+]
+}
